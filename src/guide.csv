@@ -1,0 +1,9 @@
+1,Straight flush,A hand that contains five cards of sequential rank all of the same suit
+2,Four of a kind,A hand that contains four cards of one rank and one card of another rank
+3,Full house,A hand that contains three cards of one rank and two cards of another rank
+4,Flush,A hand that contains five cards all of the same suit-not all of sequential rank
+5,Straight,A hand that contains five cards of sequential rank not all of the same suit
+6,Three of a kind,A hand contains three cards of one rank and two cards of two other ranks
+7,Two pair,A hand contains 2 cards of one rank - 2 cards of another rank and 1 card of a third rank
+8,One pair,A hand contains 2 cards of one rank and 3 cards of three other ranks
+9,High card,A hand that does not fall into any other category
