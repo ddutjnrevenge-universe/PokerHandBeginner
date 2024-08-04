@@ -1,4 +1,4 @@
-﻿# FINAL PROJECT REPORT
+﻿# Poker Hands for Beginner Program
 
 ## How to use the program:
 
@@ -30,10 +30,11 @@ The Poker Hand GUI Project consists of 5 main Java files, each serving a specifi
 
 Class Structure and Components: 
 
-1. Card Class 
+a. Card Class 
    - Represents a playing card with attributes for value and suit. 
    - Implements a toString() method for displaying card information 
-1. Fields and Variables 
+   
+b. Fields and Variables 
 
 **Deck of Cards:**
 
@@ -52,24 +53,24 @@ Throughout your code, you utilize arrays (int[] ranks) to store and manipulate c
 When evaluating the category of a poker hand (get\_category() method), you use arrays (int[] ranks) to calculate and analyze the distribution of card ranks within a hand. This allows you to determine if the hand meets the criteria for specific hand categories like One Pair, Two Pair, etc. 
 
 3. Game Logic 
-- **startGame()**: 
+- **`startGame()`**: 
   - This method initializes a new game by calling buildDeck() to create a new deck of cards and shuffleDeck() to shuffle the deck. 
   - It then deals cards to the dealer and player from the shuffled deck, populating the dealerHand and playerHand ArrayLists with the appropriate cards. 
-- **buildDeck()**: 
+- **`buildDeck()`**: 
   - The buildDeck() method constructs a standard deck of 52 playing cards by iterating over predefined arrays of suits ("H" for Hearts, "D" for Diamonds, "C" for Clubs, "S" for Spades) and values ("2" to "10", "J" for Jack, "Q" for Queen, "K" for King, "A" for Ace). 
   - Each card (combination of suit and value) is created as a Card object and added to the deck ArrayList. 
-- **shuffleDeck()**: 
+- **`shuffleDeck()`**: 
   - The shuffleDeck() method uses Collections.shuffle() to randomize the order of cards in the deck, simulating a shuffled deck of playing cards. 
-- **get\_category(ArrayList<Card> hand)**: 
-- This private  method evaluates the category of a  given poker hand (passed as an ArrayList<Card>). 
-- It checks the hand against various poker hand categories (e.g., Straight Flush, Four of a Kind) using helper methods like StraightFlush(), FourOfAKind(), FullHouse(), etc. 
-- The method returns an integer representing the category of the hand (ranging from 1 for High Card to 9 for Straight Flush). 
-- **compare\_to()**: 
-- The compare\_to() method compares the categories of the dealer's hand (dealerHand) and the player's hand (playerHand) using the get\_category() method. 
-- It returns an integer result based on the comparison: 
-+ 1 if the dealer's hand wins. 
-+ -1 if the player's hand wins. 
-+ 0 if it's a tie between the hands. 
+- **`get_category(ArrayList<Card> hand)`**: 
+  - This private  method evaluates the category of a  given poker hand (passed as an ArrayList<Card>). 
+  - It checks the hand against various poker hand categories (e.g., Straight Flush, Four of a Kind) using helper methods like `StraightFlush()`, `FourOfAKind()`, `FullHouse()`, etc. 
+  - The method returns an integer representing the category of the hand (ranging from 1 for High Card to 9 for Straight Flush). 
+- **`compare_to()`**: 
+  - The compare\_to() method compares the categories of the dealer's hand (dealerHand) and the player's hand (playerHand) using the get\_category() method. 
+  - It returns an integer result based on the comparison: 
+    + 1 if the dealer's hand wins. 
+    + -1 if the player's hand wins. 
+    + 0 if it's a tie between the hands. 
 4. Event handling: 
 
 The PokerHand\_1 class implements (ActionListener) on buttons (newGameButton, resultButton, backMenuItem, exitMenuItem, and musicButton) to handle user interactions during the game.  
@@ -77,19 +78,16 @@ The PokerHand\_1 class implements (ActionListener) on buttons (newGameButton, re
 ![](images/gameWindow.png)
 
 - **newGameButton ActionListener**: 
-- When the newGameButton is clicked, it triggers an action that calls the startGame() method to initialize a new game. 
-- After initializing the game, it repaints the gamePanel to update the GUI with the new game state (new cards dealt). 
+  - When the newGameButton is clicked, it triggers an action that calls the startGame() method to initialize a new game. 
+  - After initializing the game, it repaints the gamePanel to update the GUI with the new game state (new cards dealt). 
 - **resultButton ActionListener**: 
   - When the resultButton is clicked, it triggers an action to determine the winner of the game. 
   - It prompts the user to enter a prediction (-1 for player, 0 for tie, 1 for dealer) using a dialog box. 
   - The method then compares the hands using compare\_to() to determine the actual winner and evaluates if the user's prediction was correct. 
   - It displays a message dialog with the game outcome (winner, prediction result, hand categories, explanation) using HTML formatting for enhanced presentation. 
-- **exitMenuItem ActionListener**: 
-  - The exitMenuItem allows the user to exit the application. 
-- **backMenuItem ActionListener:** 
-- The  backMenuItem  allows  the  user  to  navigate  back  to  the  main  menu  of  the application. 
-- **musicButton ActionListener:** 
-- Clicking musicButton toggles between playing and stopping the music based on its current state. 
+- **exitMenuItem ActionListener**: allows the user to exit the application. 
+- **backMenuItem ActionListener:** allows  the  user  to  navigate  back  to  the  main  menu  of  the application. 
+- **musicButton ActionListener:** toggles between playing and stopping the music based on its current state. 
 2. **Guide.java:** provides a graphical guide to poker hand rankings 
 
 ![](images/guideWindow.png)
@@ -115,10 +113,10 @@ The PokerHand\_1 class implements (ActionListener) on buttons (newGameButton, re
 
 - GUI Components: Utilizes JFrame to create the main menu window with a background image (JLabel) and several JButton components for interactive options. 
 - Button Actions: Implements ActionListener to respond to button clicks: 
-+ startButton:  When  the  startButton  is  clicked,  it  triggers  an  action  that  calls  the PokerHand\_1() method to start the game. 
-+ guideButton: When the guideButton is clicked, it triggers an action that calls the Guide () method to the Guide window. 
-+ settingButton: When the settingButton is clicked, it triggers an action that calls the Settings() method to the Setting window, enabling users to control music. 
-+ quitButton: exit the application 
+  + startButton:  When  the  startButton  is  clicked,  it  triggers  an  action  that  calls  the PokerHand\_1() method to start the game. 
+  + guideButton: When the guideButton is clicked, it triggers an action that calls the Guide () method to the Guide window. 
+  + settingButton: When the settingButton is clicked, it triggers an action that calls the Settings() method to the Setting window, enabling users to control music. 
+  + quitButton: exit the application 
 5. **MusicPlayer.java:**  provides  functionality  to  play  background  music  using  Java's javax.sound.sampled library 
 - It utilizes the Java Sound API to load and play audio files. 
 - The MusicPlayer class is implemented as a singleton to ensure that only one instance of the player is created, promoting efficient resource management.**  
