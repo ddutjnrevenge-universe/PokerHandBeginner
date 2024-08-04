@@ -31,11 +31,11 @@ The Poker Hand GUI Project consists of 5 main Java files, each serving a specifi
 Class Structure and Components: 
 
 1. Card Class 
-   1. Represents a playing card with attributes for value and suit. 
-   1. Implements a toString() method for displaying card information 
+   - Represents a playing card with attributes for value and suit. 
+   - Implements a toString() method for displaying card information 
 1. Fields and Variables 
 
-**Deck of Cards:****  
+**Deck of Cards:**
 
 You represent the deck of cards using an ArrayList of Card objects (ArrayList<Card> deck). This dynamic array allows you to easily add, remove, and shuffle cards as needed during the game. 
 
